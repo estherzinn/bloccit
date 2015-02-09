@@ -6,10 +6,8 @@ describe FavoritesController do
   include Devise::TestHelpers
 
   before do 
-    @topic = Topic.create
-    @post = associated_post
-    @user = authenticated_user
-    sign_in @user
+    @post = create(:post)
+    @user = create(:user)
   end
 
   describe '#create' do
